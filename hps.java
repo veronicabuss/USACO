@@ -6,8 +6,8 @@ LANG: JAVA
 
 //  NAME                :   Nika Buss
 //  GROUP               :   DM
-//  PROBLEM ID          :   USACO Hoof Paper Scissors
-//  LAST MODIFIED       :   17 December 2016
+//  PROBLEM ID          :   USACO Hoof Paper Scissors Jan Contest 2017
+//  LAST MODIFIED       :   14 January 2016
 //  DESCRIPTION         :   Determines how many matches lazy Bessie 
 //                      :   can win by using an algorithm similar to beads
 //  HELPERS             :   None
