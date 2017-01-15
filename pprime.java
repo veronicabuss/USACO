@@ -25,7 +25,6 @@ public class pprime
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("pprime.out")));
         //scan.useDelimiter("[:,\\s]+");
 
-        //out.print("Enter length prog and upper bound limit: ");
         int lower = scan.nextInt();
         int upper = scan.nextInt();
 
@@ -33,22 +32,20 @@ public class pprime
           lower++;
         if(upper%2 == 0)
           upper--;
-        LOWER_BOUND = lower;
+        LOWER_BOUND = lower; //sets lower and upper bounds to private variables
         UPPER_BOUND = upper;
 
         int lowerNumDigits = Integer.toString(lower).length();
         int upperNumDigits = Integer.toString(upper).length();
 
         for(int j=lowerNumDigits; j<=upperNumDigits; j++)
-        {
-          genPalindromes(j);
-        }
+          genPalindromes(j); //generates all the palindromes 
+                      //for all the various numbers of digits
 
+       //prints results 
         for(int j=0; j<nums.size(); j++)
-        {
           out.println(nums.get(j));
-        }
-        out.close();
+        out.close(); //closes program
     }
 
     //method to determine if number is prime
@@ -61,7 +58,8 @@ public class pprime
             if (num % i == 0) return false;
         return true; //no factors go into it, so prime
     }
-
+    
+    //generates palindromes, and then determines if they're prime
     public static void genPalindromes(int numDigits)
     {
       int palindrome;
@@ -75,59 +73,55 @@ public class pprime
         return;
       }
 
-      if(numDigits == 2)
+      if(numDigits == 2) //generates two digit palindromes, then checks if prime
       {
         for(int d1=1; d1<=9; d1+=2)
         {
           palindrome = 10*d1 + d1;
           if(palindrome < LOWER_BOUND)
-            continue;
+            continue; //keep going until you reach lower bound
           if(palindrome > UPPER_BOUND)
-            return;
+            return; //done with method, exceeded limit
           if(isPrime(palindrome))
-          {
             nums.add(palindrome);
-          }
         }
         return;
       }
 
-      if(numDigits == 3)
+      if(numDigits == 3) //generates three digit palindromes, then checks if prime
       {
-        for(int d1=1; d1<=9; d1=d1+2)
+        for(int d1=1; d1<=9; d1=d1+2) //prime numbers can only have odd last digits
         {
           for(int d2=0; d2<=9; d2++)
           {
-            palindrome = 100*d1 + 10*d2 + d1;
+              //generates aba number
+              palindrome = 100*d1 + 10*d2 + d1; //first and last digis have to match
             //out.println(numDigits + " " + d1 + " " + d2 + " " + palindrome);
             if(palindrome < LOWER_BOUND)
               continue;
             if(palindrome > UPPER_BOUND)
               return;
             if(isPrime(palindrome))
-            {
               nums.add(palindrome);
-            }
           }
         }
         return;
       }
 
-      if(numDigits == 4)
+      if(numDigits == 4) //see comments for num == 3, rest are same except more loops
       {
         for(int d1=1; d1<=9; d1= d1+2)
         {
           for(int d2=0; d2<=9; d2++)
           {
+            //generates abba
             palindrome = 1000*d1 + 100*d2 +10*d2 + d1;
             if(palindrome < LOWER_BOUND)
               continue;
             if(palindrome > UPPER_BOUND)
               return;
             if(isPrime(palindrome))
-            {
               nums.add(palindrome);
-            }
           }
         }
         return;
@@ -141,15 +135,14 @@ public class pprime
           {
             for (int d3 = 0; d3 <= 9; d3++)
             {
+              //generates abcba
               palindrome = 10000*d1 + 1000*d2 +100*d3 + 10*d2 + d1;
               if(palindrome < LOWER_BOUND)
                 continue;
               if(palindrome > UPPER_BOUND)
                 return;
               if(isPrime(palindrome))
-              {
                 nums.add(palindrome);
-              }
             }
           }
         }
@@ -170,9 +163,7 @@ public class pprime
               if(palindrome > UPPER_BOUND)
                 return;
               if(isPrime(palindrome))
-              {
                 nums.add(palindrome);
-              }
             }
           }
         }
@@ -195,9 +186,7 @@ public class pprime
                 if(palindrome > UPPER_BOUND)
                   return;
                 if(isPrime(palindrome))
-                {
                   nums.add(palindrome);
-                }
               }
             }
           }
@@ -221,9 +210,7 @@ public class pprime
                 if(palindrome > UPPER_BOUND)
                   return;
                 if(isPrime(palindrome))
-                {
                   nums.add(palindrome);
-                }
               }
             }
           }
