@@ -31,9 +31,7 @@ public class sprime
 
         //prints data
         for(int j=0; j<nums.size(); j++)
-        {
           out.println(nums.get(j));
-        }
         out.close(); //exits program
     }
 
