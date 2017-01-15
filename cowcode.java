@@ -6,8 +6,8 @@ LANG: JAVA
 
 //  NAME                :   Nika Buss
 //  GROUP               :   DM
-//  PROBLEM ID          :   USACO Counting cowcode
-//  LAST MODIFIED       :   17 December 2016
+//  PROBLEM ID          :   USACO Secret Cow Code
+//  LAST MODIFIED       :   15 January 2016
 //  DESCRIPTION         :   By taking off three outliers, determines minimum area of a field enclosure
 //  HELPERS             :   None
 
@@ -21,7 +21,6 @@ public class cowcode
         Scanner scan = new Scanner(System.in);//new File("cowcode.in"));
         //PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("cowcode.out")));
         //scan.useDelimiter("[:,\\s]+");
-        //System.out.print("Enter data: ");
 
         String original = scan.next();
         String full = new String(original);
