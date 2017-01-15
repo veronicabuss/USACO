@@ -8,7 +8,7 @@ LANG: JAVA
 //  GROUP               :   DM
 //  PROBLEM ID          :   USACO Secret Cow Code
 //  LAST MODIFIED       :   15 January 2016
-//  DESCRIPTION         :   By taking off three outliers, determines minimum area of a field enclosure
+//  DESCRIPTION         :   By taking off three outliers, determines min area of a field
 //  HELPERS             :   None
 
 import java.util.Scanner;
