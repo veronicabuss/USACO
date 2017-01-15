@@ -18,8 +18,8 @@ public class cowcode
     public static void main (String[] args) throws IOException
     {
         //initializing scanner and printwriter
-        Scanner scan = new Scanner(System.in);//new File("cowcode.in"));
-        //PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("cowcode.out")));
+        Scanner scan = new Scanner(new File("cowcode.in"));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("cowcode.out")));
         //scan.useDelimiter("[:,\\s]+");
 
         String original = scan.next();
@@ -30,8 +30,8 @@ public class cowcode
 
         for(long j = 0; j<runTimes; j++)
         {
-          char1 = Character.toString(full.charAt(full.length()-1));
-          full+= char1 + full.substring(0,full.length()-1);
+          char1 = Character.toString(full.charAt(full.length()-1)); //can't use longs with charAt
+          full+= char1 + full.substring(0,full.length()-1); //or with substring
         }
         //System.out.println(full);
         while(index > 2147483640)
