@@ -6,9 +6,10 @@ LANG: JAVA
 
 //  NAME                :   Nika Buss
 //  GROUP               :   DM
-//  PROBLEM ID          :   USACO Counting cowdance
-//  LAST MODIFIED       :   17 December 2016
-//  DESCRIPTION         :   By taking off three outliers, determines minimum area of a field enclosure
+//  PROBLEM ID          :   USACO Dancing Cows
+//  LAST MODIFIED       :   15 January 2016
+//  DESCRIPTION         :   Using first fit decreasing bin packing, determines how  
+//                      :   many cows need to be dancing onstage at once to make time
 //  HELPERS             :   None
 
 import java.util.*;
