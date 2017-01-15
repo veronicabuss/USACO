@@ -6,9 +6,10 @@ LANG: JAVA
 
 //  NAME                :   Nika Buss
 //  GROUP               :   DM
-//  PROBLEM ID          :   USACO Counting hps
+//  PROBLEM ID          :   USACO Hoof Paper Scissors
 //  LAST MODIFIED       :   17 December 2016
-//  DESCRIPTION         :   By taking off three outliers, determines minimum area of a field enclosure
+//  DESCRIPTION         :   Determines how many matches lazy Bessie 
+//                      :   can win by using an algorithm similar to beads
 //  HELPERS             :   None
 
 import java.util.*;
@@ -21,7 +22,6 @@ public class hps
         Scanner scan = new Scanner(new File("hps.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("hps.out")));
         //scan.useDelimiter("[:,\\s]+");
-        //out.print("Enter data: ");
 
         int numMatches = scan.nextInt(), maxMatches=2, numP=0, numS=0, numH=0,max=0;
         char[] matches = new char[numMatches];
@@ -61,6 +61,8 @@ public class hps
         int temp;
         for(int j=2; j<=numMatches-maxMatches/2; j++)
         {
+          //finds the max number of matches able to win with all the 
+          //different combinatation at this point in the matches
           maxphs[0] = pp[j] + hh[numMatches-1]-hh[j];
           maxphs[1]  = pp[j] + ss[numMatches-1]-ss[j];
           maxphs[2]  = ss[j] + hh[numMatches-1]-hh[j];
@@ -75,11 +77,8 @@ public class hps
               temp = maxphs[k];
           }
           if(temp>max)
-          {
             max = temp;
-          }
         }
-
         out.println(max);
         out.close();
     }
